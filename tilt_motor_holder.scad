@@ -22,6 +22,8 @@ module tilt_motor_holder(with_motor=true) {
                 translate([-30, -10, 75+31]) cube([60, 10, 19]);
             }
             for(i=[-1, 1]) translate([i*100, -55/4-10, 10]) cube([profilbreite, 55/2, profilbreite], center=true);
+            for(a=[39, 141]) translate([0, 0, 160]) rotate([0, a, 0]) translate([60, -12+8, 0]) rotate([0, 90, 0]) cylinder(d=8, h=10, $fn=32);
+            for(i=[-1, 1]) translate([i*43, -4, 110]) rotate([0, i*-50, 0]) cube([24, 8, 8], center=true);
         }
         translate([0, -4.8, 160]) rotate([90, 0, 0]) cylinder(d=8.2, h=14, $fn=32);
         translate([0, 1, 160]) rotate([90, 30, 0]) cylinder(d=14.9, h=5.7, $fn=6);
@@ -31,6 +33,7 @@ module tilt_motor_holder(with_motor=true) {
                 cylinder(d=schraubenkopfdurchmesser, h=schraubenkopfhoehe+0.6, $fn=32);
             }
         }
+        for(a=[39, 141]) translate([0, 0, 160]) rotate([0, a, 0]) translate([59, -12+8, 0]) rotate([0, 90, 0]) cylinder(d=4, h=30, $fn=32);
         if(with_motor) {
             for(i=[-1, 1]) for(j=[-1, 1]) {
                 hull() for(k=[-1, 1]) rotate([90, 0, 0]) translate([i*15.5, 100+7*k+j*15.5, -1]) cylinder(d=3.3, h=5, $fn=32);
